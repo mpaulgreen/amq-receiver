@@ -18,7 +18,7 @@
  * under the License.
  *
  */
-package pubsub;
+package org.apache.qpid.jms.example.pubsub;
 
 import org.apache.qpid.jms.JmsConnection;
 
@@ -47,8 +47,9 @@ public class Receiver {
 			Context context = new InitialContext();
 
 			ConnectionFactory factory = (ConnectionFactory) context.lookup("publishSubscribeReceiverFactory");
-			Connection connection = factory.createConnection(System.getProperty("USER"),
-					System.getProperty("PASSWORD"));
+//			Connection connection = factory.createConnection(System.getProperty("USER"),
+//					System.getProperty("PASSWORD"));
+			Connection connection = factory.createConnection();
 			connection.setExceptionListener(new MyExceptionListener());
 			connection.start();
 
